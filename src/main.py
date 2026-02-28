@@ -1,4 +1,4 @@
-import discord, dotenv, os, asyncio, src.config
+import discord, dotenv, os, asyncio, src.config, signal
 from discord.ext import commands
 
 
@@ -29,4 +29,26 @@ async def main():
     await bot.load_extension("src.cogs.counting")
     await bot.start(str(os.getenv("TOKEN")))
 
-asyncio.run(main())
+async def shutdown():
+    print("Shutting down...")
+    
+    # Close database connections here
+    # await db.close()
+
+    await bot.close()
+    print("Bot shutdown complete.")
+
+def handle_signal():
+    asyncio.create_task(shutdown())
+
+if __name__ == "__main__":
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    
+    for sig in (signal.SIGINT, signal.SIGTERM):
+        loop.add_signal_handler(sig, handle_signal)
+    
+    try:
+        loop.run_until_complete(main())
+    finally:
+        loop.close()
