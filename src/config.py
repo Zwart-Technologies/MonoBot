@@ -17,10 +17,10 @@ def LoadPermissions():
 
 def getModerationPermission(permission: str) -> str:
     moderation = permissions["moderation"]
-    if not moderation[permission]:
-        return moderation["default"]
-    else:
-        return moderation[permission]
+    value = moderation.get(permission)
+    if value:
+        return value
+    return moderation.get("default")
 
 def LoadLogging():
     global logging
@@ -30,8 +30,8 @@ def LoadLogging():
 def getLogging(value: str) -> str:
     print(logging)
     print(value)
-    print(logging[value])
-    return logging[value]
+    print(logging.get(value))
+    return logging.get(value)
 
 def LoadCounting():
     global counting
@@ -39,9 +39,9 @@ def LoadCounting():
     counting = json.loads(rawCounting)
 
 def getCounting(value: str) -> str:
-    return counting[value]
+    return counting.get(value)
 
 def saveCounting(count: int, lastCountUser: int) -> None:
     counting["count"] = count
     counting["lastCountUser"] = lastCountUser
-    saveConfigFile("counting.json", json.dumps(counting))
+    saveConfigFile("counting.json", json.dumps(counting, indent=4))
