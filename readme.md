@@ -3,6 +3,8 @@
 
 > All-in-one Discord bot for your server, completely free and open source
 
+[![Discord](https://img.shields.io/discord/1476313144120049797?style=flat&logo=discord&logoColor=white&label=Join%20the%20Discord&color=738ad6)](https://discord.gg/nc7n3qemf5)
+
 ## Features
 
 - **Counting Game** - Collaborative counting channel where users take turns incrementing a number
