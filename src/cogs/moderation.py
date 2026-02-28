@@ -8,11 +8,9 @@ class Moderation(commands.Cog):
 
     @commands.command()
     async def clear(self, ctx: commands.Context, amount: int) -> None:
-        print("clear recieved")
         perm = src.config.getModerationPermission("clear")
         guild = ctx.guild
 
-        print("clear recieved 1")
 
         if not guild:
             await ctx.reply("This command is only usable in guilds")
@@ -29,7 +27,6 @@ class Moderation(commands.Cog):
             return
 
         if not isinstance(ctx.channel, discord.TextChannel):
-            print("no text channel found")
             return
 
         await ctx.channel.purge(limit=amount+1)

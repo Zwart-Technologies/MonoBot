@@ -12,9 +12,6 @@ class Counting(commands.Cog):
     async def on_message(self, message: discord.Message) -> None:
         global count, lastCountUser
         
-        # Process commands for all channels
-        await self.bot.process_commands(message)
-        
         # Only handle counting game in the counting channel
         if message.channel.id != countingChannel:
             return
