@@ -5,13 +5,6 @@
 
 [![Discord](https://img.shields.io/discord/1476313144120049797?style=flat&logo=discord&logoColor=white&label=Join%20the%20Discord&color=738ad6)](https://discord.gg/nc7n3qemf5)
 
-## Features
-
-- **Counting Game** - Collaborative counting channel where users take turns incrementing a number
-- **Join Logging** - Track which invite users join through with detailed logging
-- **Moderation** - Clear messages with role-based permission control
-- **Extensible Cogs System** - Easy to add new features
-
 ## Prerequisites
 
 - Python 3.8 or higher
@@ -25,7 +18,26 @@
    cd MonoBot
    ```
 
-2. **Run the setup script**
+2. Create a venv
+
+   Linux / Macos
+   ``` bash
+   python3 -m venv venv
+   source venv/bin/activate
+   pip install -r requirements.txt
+   ```
+
+   Windows
+   ``` bat
+   python3 -m venv venv
+   venv/Scripts/Activate.bat
+   pip install -r requirements.txt
+   ```
+
+
+3. **Run the setup script**
+
+   Linux / Macos
    ```bash
    chmod +x setup.sh
    ./setup.sh
@@ -36,11 +48,25 @@
    - Moderation role IDs
    - Logging channel ID
    - Counting channel ID
+   
+   Windows
+   
+   No setup script is currently available for windows, here are the steps to configure the bot:
 
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+   1. rename the config.example folder to config \
+      ``` cmd
+      move config.example config
+      ```
+   
+   2. Set these values; `default` in `config/permissions.json` under moderation, `loggingchannel` in `config/logging.json` and `countingchannel` in `config/counting.json` 
+   3. rename `.env.example` to `.env`: 
+      ```  cmd
+      move .env.example .env
+      ```
+   4. set your discord bot token in ./.env
+      ``` .env
+      TOKEN=your_discord_bot_token
+      ```
 
 ## Usage
 
@@ -57,22 +83,6 @@ All configuration is stored in the config directory:
 - **logging.json** - Channel ID for join logs
 - **counting.json** - Channel ID and state for counting game
 
-## Commands
-
-- `!ping` - Check if the bot is online
-- `!clear <amount>` - Delete messages (requires moderation role)
-
-## Project Structure
-
-```
-src/
-├── main.py           # Bot entry point
-├── config.py         # Configuration management
-└── cogs/
-    ├── counting.py   # Counting game cog
-    ├── joinLogging.py # Join log tracking cog
-    └── moderation.py # Moderation commands cog
-```
 
 ## License
 
