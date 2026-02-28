@@ -5,7 +5,7 @@ Thank you for your interest in contributing to MonoBot! We welcome contributions
 ## Getting Started
 
 1. **Choose what to do**:
-   You can think of something to contribute yourself or do something on the [todo list](todo)
+   You can think of something to contribute yourself or do something on the [todo list](todo.md)
 
 2. **Fork the repository** on GitHub
 3. **Clone your fork** locally:
