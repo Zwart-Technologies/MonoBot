@@ -1,3 +1,9 @@
+## code
+
+- [ ] try: except: on everything
+- [ ] start using a logger
+- [ ] function descriptions
+
 ## commands / features
 partially taken from other bots
 
