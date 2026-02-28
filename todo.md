@@ -6,11 +6,11 @@ partially taken from other bots
 
 
 ### Moderation
-- [ ] setnick
-- [ ] ban
-- [ ] unban
-- [ ] kick
-- [ ] vkick
+- [x] setnick
+- [x] ban
+- [x] unban
+- [x] kick
+- [x] vkick
 - [ ] mute
 - [ ] unmute
 - [ ] timeout
