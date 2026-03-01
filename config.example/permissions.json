@@ -1,0 +1,7 @@
+{
+    "moderation": {
+        "default": "0",
+        "clear": "0",
+        "setnick": "0"
+    }
+}
